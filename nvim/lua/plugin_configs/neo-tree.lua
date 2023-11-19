@@ -1,0 +1,34 @@
+local map = vim.api.nvim_set_keymap
+local noresi = {noremap = true, silent = true}
+
+require("neo-tree").setup {
+  sort_case_insensitive = true,
+  default_component_configs = {
+    name = {
+      use_git_status_colors = false,
+    },
+    indent = {
+      with_markers = false,
+      with_expanders = true,
+    },
+    icon = {
+      default = " ",
+    },
+  },
+  filesystem = {
+    bind_to_cwd = true,
+    cwd_target = {
+      sidebar = "global",
+      current = "global"
+    },
+    filtered_items = {
+      hide_dotfiles = false,
+      hide_gitignored = false,
+      hide_hidden = false,
+    },
+    hijack_netrw_behavior = "open_default"
+  }
+}
+
+map("n", "<leader>f", ":Neotree action=focus position=left<CR>", noresi)
+map("n", "<leader>F", ":Neotree reveal action=focus position=left<CR>", noresi)
