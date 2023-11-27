@@ -1,0 +1,3 @@
+colors are legitemely stolen from <https://github.com/navarasu/onedark.nvim/blob/master/lua/onedark/palette.lua#L142-L169>
+
+download bemoji script at <https://github.com/marty-oehme/bemoji> and place it at </.local/bin/> if you wanna the menu to display on Super+grave keypress
