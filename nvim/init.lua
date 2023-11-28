@@ -73,7 +73,6 @@ o.swapfile = false -- don"t create swap files
 o.history = 1000 -- longer cmd history
 o.termguicolors = true -- use gui colors in terminal
 o.guicursor = "n-c-sm:block-Cursor,v:block-vCursor,ci-ve:ver25-Cursor,i:ver25-iCursor,r-cr-o:hor20-Cursor"
-vim.cmd "set iskeyword-=_"
 
 vim.api.nvim_create_user_command("MyConfig", function() vim.cmd "e ~/.config/nvim" end, {})
 
@@ -88,9 +87,9 @@ map("", "<leader><leader>", "<Nop>", noresi)
 
 map("n", "<Esc>", ":nohl<CR>", noresi)
 
-map("n", "<leader>!w", ":set wrap!<CR>:set wrap?<CR>", noresi)
-map("n", "<leader>!l", ":set list!<CR>:set list?<CR>", noresi)
-map("n", "<leader>!e", ":set expandtab!<CR>:set expandtab?<CR>", noresi)
+map("n", "<leader>`w", ":set wrap!<CR>:set wrap?<CR>", noresi)
+map("n", "<leader>`l", ":set list!<CR>:set list?<CR>", noresi)
+map("n", "<leader>`e", ":set expandtab!<CR>:set expandtab?<CR>", noresi)
 
 map("n", "<leader>w", "<C-w>", noresi)
 
