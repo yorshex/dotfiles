@@ -8,7 +8,7 @@
 
 general {
         colors = true
-        interval = 10
+        interval = 5
 }
 
 order += "disk /"

@@ -26,9 +26,9 @@ require("neo-tree").setup {
       hide_gitignored = false,
       hide_hidden = false,
     },
-    hijack_netrw_behavior = "open_default"
+    hijack_netrw_behavior = "open_current"
   }
 }
 
-map("n", "<leader>f", ":Neotree action=focus position=left<CR>", noresi)
-map("n", "<leader>F", ":Neotree reveal action=focus position=left<CR>", noresi)
+map("n", "<leader>f", ":Neotree action=focus position=current<CR>", noresi)
+map("n", "<leader>F", ":Neotree reveal action=focus position=current<CR>", noresi)
