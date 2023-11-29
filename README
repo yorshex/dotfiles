@@ -1,5 +1,4 @@
     Colors are legitemely stolen from https://github.com/navarasu/onedark.nvim/blob/master/lua/onedark/palette.lua#L142-L169.
-    Download bemoji script at  and place it at .local/bin if you wanna the menu to display on Super+grave keypress.
     The i3 config uses
     - bemoji: https://github.com/marty-oehme/bemoji
     - xsecurelock: available at your usual package repository, i guess
