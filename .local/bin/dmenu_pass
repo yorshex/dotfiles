@@ -6,7 +6,7 @@ if [ ! -d "${PREFIX}" ]; then exit 1; fi
 
 OLD_IFS=%IFS
 IFS=$(echo -en "\n\b")
-passwdlist=($(find "${PREFIX}" -mindepth 1 -name *.gpg -printf '%P\n'))
+passwdlist=($(find "${PREFIX}" -mindepth 1 -name \*.gpg -printf '%P\n'))
 IFS=$OLD_IFS
 
 passwdselect=$(printf '%s\n' "${passwdlist[@]%.gpg}" | dmenu -p "pass:")

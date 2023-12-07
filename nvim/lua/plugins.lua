@@ -31,7 +31,7 @@ require("lazy").setup
         -- "to" 'work' (with) [surrounding] {stuff}
         event = "VeryLazy",
         version = "*",
-        config = function() require("nvim-surround").setup {} end
+        config = true
     },
 
     -- Environment
@@ -52,6 +52,15 @@ require("lazy").setup
         lazy = true,
         ft = "markdown",
         config = function() require("plugin_configs/peek") end
+    },
+
+    {
+        "kdheepak/lazygit.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+        event = "VeryLazy",
+        config = function() require("plugin_configs/lazygit") end
     },
 
     -- Appearance

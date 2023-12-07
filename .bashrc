@@ -6,7 +6,7 @@ export NVM_DIR="$HOME/.nvm"
 export CLICOLOR=1
 export HISTCONTROL=ignoreboth
 
-alias ls='ls --color=auto'
+alias ls='ls -h --color=auto'
 alias grep='grep --color=auto'
 alias mv='mv -i'
 alias rm='rm -i'
