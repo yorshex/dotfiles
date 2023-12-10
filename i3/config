@@ -149,7 +149,7 @@ bar {
     urgent_workspace   $c_dark_red $c_dark_red $white
     binding_mode       $c_dark_purple $c_dark_purple $white
   }
-  status_command i3status
+  status_command i3blocks
   tray_output primary
   position top
 }

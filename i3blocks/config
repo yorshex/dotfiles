@@ -1,0 +1,19 @@
+[disk]
+command=df /dev/sda1 -h | sed '2!d' | awk -F\  '{print " " $4}'
+interval=10
+
+[mem]
+command=free | sed '2!d' | awk -F\  '{print $3/$2*100}' | awk -F. '{print " "$1"%"}'
+interval=5
+
+[cpu]
+command=awk -F\  '{ print " " $1 }' /proc/loadavg
+interval=5
+
+[layout]
+command=case "$(xset -q | grep LED | awk '{ print $10 }' | cut -c -5)" in '00000' ) echo 'us' ;; '00001' ) echo 'ru' ;; * ) echo '?' ;; esac
+interval=repeat
+
+[time]
+command=date +'%Y-%m-%d %H:%M'
+interval=1
