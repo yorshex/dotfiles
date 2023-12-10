@@ -1,6 +1,6 @@
 [disk]
 command=df /dev/sda1 -h | sed '2!d' | awk -F\  '{print " " $4}'
-interval=10
+interval=5
 
 [mem]
 command=free | sed '2!d' | awk -F\  '{print $3/$2*100}' | awk -F. '{print " "$1"%"}'
@@ -16,4 +16,4 @@ interval=repeat
 
 [time]
 command=date +'%Y-%m-%d %H:%M'
-interval=1
+interval=60
