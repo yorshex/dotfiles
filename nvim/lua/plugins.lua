@@ -54,8 +54,8 @@ require("lazy").setup
         config = function() require("plugin_configs/peek") end
     },
 
-    {
-        "kdheepak/lazygit.nvim",
+    { "kdheepak/lazygit.nvim",
+        -- gitlazy git client "integration"
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
