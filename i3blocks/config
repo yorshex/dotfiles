@@ -12,7 +12,13 @@ interval=5
 
 [layout]
 command=case "$(xset -q | grep LED | awk '{ print $10 }' | cut -c -5)" in '00000' ) echo 'us' ;; '00001' ) echo 'ru' ;; * ) echo '?' ;; esac
-interval=repeat
+interval=1
+signal=2
+
+[volume]
+command=case "$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}')" in 'yes' ) printf ' ' ;; 'no' ) printf ' ' ;; esac; pactl get-sink-volume @DEFAULT_SINK@ | awk -F\ /\  '{print $2}'
+interval=5
+signal=1
 
 [time]
 command=date +'%Y-%m-%d %H:%M'

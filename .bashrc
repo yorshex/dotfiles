@@ -2,7 +2,6 @@
 [[ $- != *i* ]] && return
 
 export EDITOR=nvim
-export NVM_DIR="$HOME/.nvm"
 export CLICOLOR=1
 export HISTCONTROL=ignoreboth
 
@@ -10,6 +9,8 @@ alias ls='ls -h --color=auto'
 alias grep='grep --color=auto'
 alias mv='mv -i'
 alias rm='rm -i'
+
+set -o vi
 
 bind 'set completion-ignore-case on'
 bind 'set show-all-if-ambiguous on'
