@@ -9,7 +9,7 @@ IFS=$(echo -en "\n\b")
 passwdlist=($(find "${PREFIX}" -mindepth 1 -name \*.gpg -printf '%P\n'))
 IFS=$OLD_IFS
 
-passwdselect=$(printf '%s\n' "${passwdlist[@]%.gpg}" | dmenu -p "pass:")
+passwdselect=$(printf '%s\n' "${passwdlist[@]%.gpg}" | dmenu -p "pass")
 
 if [ ! -f "${PREFIX}/${passwdselect}.gpg" ]; then exit 1; fi
 
