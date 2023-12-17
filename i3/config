@@ -11,7 +11,6 @@ bindsym $mod+m exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle &&
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 floating_modifier $mod
-tiling_drag modifier titlebar
 
 bindsym $mod+Shift+q kill
 
@@ -19,7 +18,7 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+Return exec st
 bindsym $mod+p exec --no-startup-id dmenu_pass
 bindsym $mod+grave exec --no-startup-id bemoji
-bindsym $mod+q exec --no-startup-id boomer -c ~/.config/boomer/config
+bindsym $mod+b exec --no-startup-id boomer -c ~/.config/boomer/config
 bindsym Print exec flameshot gui
 
 bindsym $mod+h focus left
