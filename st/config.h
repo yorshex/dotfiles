@@ -8,7 +8,7 @@
 static char *font = "Iosevka Fixed:pixelsize=20:antialias=true:autohint=false";
 /* Spare fonts */
 static char *font2[] = {
-    "Symbols Nerd Font:pixelsize=20:antialias=true:autohint=true"
+    "Symbols Nerd Font:pixelsize=20:antialias=true:autohint=false"
 };
 
 static int borderpx = 2;
@@ -204,8 +204,8 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ TERMMOD,              XK_plus,        zoom,           {.f = +1} },
-	{ TERMMOD,              XK_underscore,  zoom,           {.f = -1} },
+	{ TERMMOD,              XK_plus,        zoom,           {.f = +2} },
+	{ TERMMOD,              XK_underscore,  zoom,           {.f = -2} },
 	{ TERMMOD,              XK_BackSpace,   zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
