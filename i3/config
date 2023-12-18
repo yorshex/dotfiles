@@ -12,14 +12,15 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 floating_modifier $mod
 
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+w exec chromium
+bindsym $mod+d exec --no-startup-id dmenu_run -i
 bindsym $mod+Return exec st
 bindsym $mod+p exec --no-startup-id dmenu_pass
-bindsym $mod+grave exec --no-startup-id bemoji
-bindsym $mod+b exec --no-startup-id boomer -c ~/.config/boomer/config
-bindsym Print exec flameshot gui
+bindsym $mod+grave exec --no-startup-id bemoji -n
+bindsym $mod+z exec --no-startup-id boomer -c ~/.config/boomer/config
+bindsym Print exec --no-startup-id flameshot gui
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -46,7 +47,7 @@ bindsym $mod+v split v
 
 bindsym $mod+f fullscreen toggle
 
-bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 bindsym $mod+Shift+space floating toggle
@@ -102,16 +103,17 @@ bindsym $mod+Shift+x exec --no-startup-id physlock
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-  bindsym h resize shrink width 10 px or 10 ppt
-  bindsym j resize grow height 10 px or 10 ppt
-  bindsym k resize shrink height 10 px or 10 ppt
-  bindsym l resize grow width 10 px or 10 ppt
+  bindsym h resize shrink width 10 px or 1 ppt
+  bindsym j resize grow height 10 px or 1 ppt
+  bindsym k resize shrink height 10 px or 1 ppt
+  bindsym l resize grow width 10 px or 1 ppt
 
-  bindsym Left resize shrink width 10 px or 10 ppt
-  bindsym Down resize grow height 10 px or 10 ppt
-  bindsym Up resize shrink height 10 px or 10 ppt
-  bindsym Right resize grow width 10 px or 10 ppt
+  bindsym Left resize shrink width 10 px or 1 ppt
+  bindsym Down resize grow height 10 px or 1 ppt
+  bindsym Up resize shrink height 10 px or 1 ppt
+  bindsym Right resize grow width 10 px or 1 ppt
 
+  bindsym q mode "default"
   bindsym Return mode "default"
   bindsym Escape mode "default"
   bindsym $mod+r mode "default"
