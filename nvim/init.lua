@@ -40,39 +40,40 @@ o.listchars = "space:·,nbsp:_,tab:――→,extends:→,precedes:←" -- set wh
 o.list = true -- show whitespace characters
 
 -- Font
-font_size = 0
-function set_font_option()
-    vim.o.guifont = "IosevkaTerm NF:h" .. font_size
-end
-function set_default_font_size()
-    font_size = 14
-    set_font_option()
-end
-function increase_font_size()
-    font_size = font_size + 1
-    if font_size > 36 then font_size = 36 end
-    set_font_option()
-end
-function decrease_font_size()
-    font_size = font_size - 1
-    if font_size < 9 then font_size = 9 end
-    set_font_option()
-end
-
-set_default_font_size()
+-- font_size = 0
+-- function set_font_option()
+--     vim.o.guifont = "IosevkaTerm NF:h" .. font_size
+-- end
+-- function set_default_font_size()
+--     font_size = 14
+--     set_font_option()
+-- end
+-- function increase_font_size()
+--     font_size = font_size + 1
+--     if font_size > 36 then font_size = 36 end
+--     set_font_option()
+-- end
+-- function decrease_font_size()
+--     font_size = font_size - 1
+--     if font_size < 9 then font_size = 9 end
+--     set_font_option()
+-- end
+--
+-- set_default_font_size()
 
 -- Misc
 o.showmode = false -- do not show the mode in the output line
 o.mouse = "a" -- support mouse
 o.wrap = true -- don't wrap long lines
 o.encoding = "utf-8" -- save files in utf-8 by default
+o.fileformat = "unix" -- use the normal one by default
 o.scrolloff = 7 -- scroll extra 7 lines
 o.sidescrolloff = 19 -- scroll extra 19 columns
 o.wildmenu = true -- use completion
 o.swapfile = false -- don"t create swap files
 o.history = 1000 -- longer cmd history
 o.termguicolors = true -- use gui colors in terminal
-o.guicursor = "n-c-sm:block-Cursor,v:block-vCursor,ci-ve:ver25-Cursor,i:ver25-iCursor,r-cr-o:hor20-Cursor"
+o.guicursor = "n-c-sm:block,i-ci-ve:ver25,v-r-cr-o:hor20"
 
 vim.api.nvim_create_user_command("MyConfig", function() vim.cmd "e ~/.config/nvim" end, {})
 

@@ -4,13 +4,18 @@ PREFIX=$HOME/.password-store
 
 if [ ! -d "${PREFIX}" ]; then exit 1; fi
 
-OLD_IFS=%IFS
+OLD_IFS=$IFS
 IFS=$(echo -en "\n\b")
 passwdlist=($(find "${PREFIX}" -mindepth 1 -name \*.gpg -printf '%P\n'))
 IFS=$OLD_IFS
 
-passwdselect=$(printf '%s\n' "${passwdlist[@]%.gpg}" | dmenu -p "pass")
+passwdselect=$(printf '%s\n' "${passwdlist[@]%.gpg}" | dmenu -p "pass" -F -l 20 -g 4)
 
-if [ ! -f "${PREFIX}/${passwdselect}.gpg" ]; then exit 1; fi
+[ -z "$passwdselect" ] && exit 0
 
-pass show -c -- "${passwdselect}"
+if [ ! -f "${PREFIX}/${passwdselect}.gpg" ]; then
+    notify-send "Error: ${passwdselect} is not in the password store."
+    exit 1
+fi
+
+pass show -c -- "${passwdselect}" && notify-send "Copied ${passwdselect} to clipboard." "Will clear in 45 seconds."

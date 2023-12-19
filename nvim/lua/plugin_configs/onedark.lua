@@ -6,9 +6,7 @@ require("onedark").setup {
   highlights = {
     Whitespace = {fg="$bg1"},
 
-    Cursor = {bg="$bg_yellow", fg="$bg_d", fmt="none"},
-    iCursor = {bg="$bg_yellow", fg="$bg_d", fmt="none"},
-    vCursor = {bg="$light_grey", fg="$bg_d", fmt="none"},
+    Visual = {fg="$fg"},
     CursorLineNr = {fg="$yellow"},
 
     -- syntax hl
