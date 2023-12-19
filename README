@@ -1,6 +1,0 @@
-    Colors are legitemely stolen from https://github.com/navarasu/onedark.nvim/blob/master/lua/onedark/palette.lua#L142-L169.
-    The i3 config uses
-    - bemoji: https://github.com/marty-oehme/bemoji
-    - xsecurelock: available at your usual package repository, i guess
-    - some dmenu scripts i have in .local/bin
-    - and boomer: https://github.com/tsoding/boomer. Allows you to zoom into and focus on smth during a stream, really handy.
