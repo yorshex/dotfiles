@@ -1,6 +1,6 @@
 # My dotfiles
 
-Colors are legitemely stolen from [navarasu/onedark.nvim's pallete][pallete].
+Colors are legitemely stolen from [navarasu/onedark.nvim's palette][palette].
 
 Programs that're configured here:
 - bash
