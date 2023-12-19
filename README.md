@@ -11,13 +11,13 @@ Programs that're configured here:
 - [nvim][nvim]
 
 Programs configs depend on:
-- Some dmenu scripts I have in [.local/bin](/.local/bin).
-  The `dmenu_pass` script in here isn't the
-  one from dmenu's official scripts section.
+- The [`dmenu_pass`](/.local/bin/dmenu_pass) script in
+  [`/.local/bin`](/.local/bin). This is just the [`dmenu_pass`][dmenu-pass]
+  script listed on [dmenu's scripts page][dmenu-scripts] with a few changes to
+  make it display notifications on errors and successful clipboard writes.
 - [bemoji][bemoji]
-- And [boomer][boomer].
-  Allows you to zoom into and highlight something.
-  Really handy during a stream
+- And [boomer][boomer]. Allows you to zoom into and highlight something. Really
+  handy during a stream
 - [flameshot][flameshot]
 - [ungoogled chromium][chromium]
 
@@ -29,6 +29,8 @@ Programs configs depend on:
 [st]: https://st.suckless.org/
 [nvim]: https://neovim.io/
 
+[dmenu-pass]: https://efe.kim/files/scripts/dmenu_pass
+[dmenu-scripts]: https://tools.suckless.org/dmenu/scripts/
 [bemoji]: https://github.com/marty-oehme/bemoji
 [boomer]: https://github.com/tsoding/boomer
 [flameshot]: https://flameshot.org/
