@@ -16,7 +16,7 @@ alias vi='nvim'
 bind 'set completion-ignore-case on'
 bind 'set show-all-if-ambiguous on'
 
-[ $SHLVL -eq 1 -a $$ -eq $BASHPID ] && MY_WIN_TITLE="\[\e]0;\u@\h:\w\a\]"
+[ $SHLVL -eq 1 -a $$ -eq $BASHPID ] && MY_WIN_TITLE="\[\e]0;:\w\a\]"
 PS1="${MY_WIN_TITLE}\[\e[36m\]\u@\h\[\e[0m\] \[\e[1;32m\]\w\[\e[0m\] \$ "
 
 [ $SHLVL -eq 1 -a $$ -eq $BASHPID ] && trap 'echo -ne "\e]0;${BASH_COMMAND}:${PWD/#$HOME/\~}\a"' DEBUG
