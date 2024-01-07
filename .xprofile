@@ -1,0 +1,9 @@
+#!/bin/sh
+
+[ -f ~/.fehbg ] && ~/.fehbg || hsetroot -solid "#1b1c1e"
+
+flameshot &
+easyeffects --gapplication-service &
+dwmblocks &
+dunst &
+compfy &
