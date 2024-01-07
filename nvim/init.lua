@@ -36,7 +36,7 @@ o.tabstop = 4 -- tabulation size
 o.shiftwidth = 4 -- indentation size
 
 -- Whitespace visibility
-o.listchars = "space:·,nbsp:_,tab:――→,extends:→,precedes:←" -- set whitespace characters
+o.listchars = "space:·,nbsp:_,tab:——→,extends:→,precedes:←" -- set whitespace characters
 o.list = true -- show whitespace characters
 
 -- Font
