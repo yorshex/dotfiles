@@ -1,9 +1,11 @@
 #!/bin/sh
 
-[ -f ~/.fehbg ] && ~/.fehbg || hsetroot -solid "#1b1c1e"
+[ -f ~/.fehbg ] && ~/.fehbg || hsetroot -solid "#1b1c1e" &
 
-flameshot &
 easyeffects --gapplication-service &
+xcompmgr &
 dwmblocks &
 dunst &
-compfy &
+flameshot &
+xautolock -time 10 -locker slock &
+sxhkd &
