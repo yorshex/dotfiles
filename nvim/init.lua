@@ -74,6 +74,8 @@ _O.swapfile = false -- don"t create swap files
 _O.history = 1000 -- longer cmd history
 _O.termguicolors = true -- use gui colors in terminal
 _O.guicursor = "n-c-sm:block,i-ci-ve:ver25,v-r-cr-o:hor20"
+_O.langmap = "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯБЮЖЭХЪ;ABCDEFGHIJKLMNOPQRSTUVWXYZ\\<\\>\\:\\\"\\{\\},"..
+             "фисвуапршолдьтщзйкыегмцчнябюжэхъ;abcdefghijklmnopqrstuvwxyz\\,\\.\\;\\\'\\[\\]"
 
 vim.api.nvim_create_user_command("MyConfig", function() vim.cmd "e ~/.config/nvim" end, {})
 

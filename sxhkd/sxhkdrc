@@ -1,22 +1,41 @@
 # sxhkdrc
 
-super+w             # open web
+# open web
+super+w
 	chromium
-Print               # take a screenshot
+
+# take a screenshot
+Print
 	flameshot gui
-super+grave         # open emoji menu
+
+# open emoji menu
+super+grave
 	bemoji -n
-super+p             # open password manager
+
+# open password manager
+super+p
 	dmenu_pass
-super+v             # open volume control
+
+# open volume control
+super+v
 	pavucontrol
-super+e             # open sound effects control
+
+# open sound effects control
+super+e
 	easyeffects
-super+b             # open boomer
+
+# open boomer
+super+b
 	boomer -c ~/.config/boomer/config
-super+shift+l       # lock screen
+
+# lock screen
+super+shift+l
 	slock
-super+{minus,equal} # volume {up,down}
+
+# volume {up,down}
+super+{minus,equal} 
 	pactl set-sink-volume @DEFAULT_SINK@ {-,+}5% && pkill -SIGRTMIN+1 dwmblocks
-super+BackSpace     # mute sound
+
+# mute sound
+super+BackSpace
 	pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -SIGRTMIN+1 dwmblocks
