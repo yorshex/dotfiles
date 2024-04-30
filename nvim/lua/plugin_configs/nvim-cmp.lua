@@ -1,4 +1,4 @@
-function config()
+local config = function()
 	local cmp = require('cmp')
 
 	cmp.setup {

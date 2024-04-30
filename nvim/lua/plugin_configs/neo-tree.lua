@@ -1,4 +1,4 @@
-function config()
+local config = function()
 	local map = vim.api.nvim_set_keymap
 	local noresi = {noremap = true, silent = true}
 

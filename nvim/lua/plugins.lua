@@ -37,7 +37,7 @@ require("lazy").setup
 			"nvim-tree/nvim-web-devicons",
 			"muniftanjim/nui.nvim",
 		},
-		config = require("plugin_configs/neo-tree")
+		config = require("plugin_configs.neo-tree")
 	},
 
 	{ "toppair/peek.nvim",
@@ -45,14 +45,14 @@ require("lazy").setup
 		build = "deno task --quiet build:fast",
 		lazy = true,
 		ft = "markdown",
-		config = require("plugin_configs/peek")
+		config = require("plugin_configs.peek")
 	},
 
 	{ "kdheepak/lazygit.nvim",
 		-- gitlazy git client integration
 		dependencies = { "nvim-lua/plenary.nvim" },
 		event = "VeryLazy",
-		config = require("plugin_configs/lazygit")
+		config = require("plugin_configs.lazygit")
 	},
 
 	{
@@ -62,15 +62,7 @@ require("lazy").setup
 			"williamboman/mason-lspconfig.nvim",
 			"neovim/nvim-lspconfig",
 		},
-		config = function()
-			require("mason").setup()
-			require("mason-lspconfig").setup {
-				ensure_installed = { "lua_ls", "clangd" }
-			}
-
-			require("lspconfig").lua_ls.setup {}
-			require("lspconfig").clangd.setup {}
-		end
+		config = require("plugin_configs.mason")
 	},
 
 	{ "hrsh7th/nvim-cmp",
@@ -86,7 +78,7 @@ require("lazy").setup
 			"neovim/nvim-lspconfig",
 		},
 		event = "VeryLazy",
-		config = require("plugin_configs/nvim-cmp")
+		config = require("plugin_configs.nvim-cmp")
 	},
 
 
@@ -95,17 +87,17 @@ require("lazy").setup
 	{ "nvim-lualine/lualine.nvim",
 		-- custom statusline at the bottom of every window
 		dependencies = { "kyazdani42/nvim-web-devicons", optional = true },
-		config = require("plugin_configs/lualine")
+		config = require("plugin_configs.lualine")
 	},
 
 	{ "nvim-treesitter/nvim-treesitter",
 		-- syntax highlighting
 		build = function() require("nvim-treesitter.install").update { with_sync=true } end,
-		config = require("plugin_configs/nvim-treesitter")
+		config = require("plugin_configs.nvim-treesitter")
 	},
 
 	{ "navarasu/onedark.nvim",
 		-- highly customizable color theme
-		config = require("plugin_configs/onedark")
+		config = require("plugin_configs.onedark")
 	},
 }

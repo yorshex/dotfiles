@@ -1,4 +1,4 @@
-function config()
+local config = function()
 	require("onedark").setup {
 		style = "warmer",
 

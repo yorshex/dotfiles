@@ -1,4 +1,4 @@
-function config()
+local config = function()
 	vim.o.showmode = false -- do not show the mode in the output line
 
 	require("lualine").setup {
