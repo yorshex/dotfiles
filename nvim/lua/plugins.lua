@@ -12,29 +12,23 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- enumerate plugins for Lazy
+
+
 require("lazy").setup
 {
-	-- Edit
+	-- Environment
+
 	{ "mg979/vim-visual-multi",
 		-- multiple cursors
 		event = "VeryLazy",
 	},
 
 	{ "terrortylor/nvim-comment",
-		-- -- comment toggle
+		-- comment toggle
 		event = "VeryLazy",
 		config = function() require("nvim_comment").setup() end
 	},
 
-	{ "kylechui/nvim-surround",
-		-- "to" 'work' (with) [surrounding] {stuff}
-		event = "VeryLazy",
-		version = "*",
-		config = true
-	},
-
-	-- Environment
 	{ "nvim-neo-tree/neo-tree.nvim",
 		-- a file manager within the editor
 		branch = "v3.x",
@@ -43,7 +37,7 @@ require("lazy").setup
 			"nvim-tree/nvim-web-devicons",
 			"muniftanjim/nui.nvim",
 		},
-		config = function() require("plugin_configs/neo-tree") end
+		config = require("plugin_configs/neo-tree")
 	},
 
 	{ "toppair/peek.nvim",
@@ -51,37 +45,67 @@ require("lazy").setup
 		build = "deno task --quiet build:fast",
 		lazy = true,
 		ft = "markdown",
-		config = function() require("plugin_configs/peek") end
+		config = require("plugin_configs/peek")
 	},
 
 	{ "kdheepak/lazygit.nvim",
-		-- gitlazy git client "integration"
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
+		-- gitlazy git client integration
+		dependencies = { "nvim-lua/plenary.nvim" },
 		event = "VeryLazy",
-		config = function() require("plugin_configs/lazygit") end
+		config = require("plugin_configs/lazygit")
 	},
 
-	-- Appearance
-	{ "navarasu/onedark.nvim",
-		-- highly customizable color theme
-		config = function() require("plugin_configs/onedark") end
+	{
+		"williamboman/mason.nvim",
+		-- lsp
+		dependencies = {
+			"williamboman/mason-lspconfig.nvim",
+			"neovim/nvim-lspconfig",
+		},
+		config = function()
+			require("mason").setup()
+			require("mason-lspconfig").setup {
+				ensure_installed = { "lua_ls", "clangd" }
+			}
+
+			require("lspconfig").lua_ls.setup {}
+			require("lspconfig").clangd.setup {}
+		end
 	},
+
+	{ "hrsh7th/nvim-cmp",
+		-- completion
+		dependencies = {
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-cmdline",
+			"hrsh7th/cmp-nvim-lua",
+			"hrsh7th/cmp-nvim-lsp",
+			"petertriho/cmp-git",
+
+			"neovim/nvim-lspconfig",
+		},
+		event = "VeryLazy",
+		config = require("plugin_configs/nvim-cmp")
+	},
+
+
+	-- Appearance
 
 	{ "nvim-lualine/lualine.nvim",
 		-- custom statusline at the bottom of every window
 		dependencies = { "kyazdani42/nvim-web-devicons", optional = true },
-		config = function() require("plugin_configs/lualine") end
+		config = require("plugin_configs/lualine")
 	},
 
 	{ "nvim-treesitter/nvim-treesitter",
-		-- advanced syntax highlighting
-		event = "VeryLazy",
+		-- syntax highlighting
 		build = function() require("nvim-treesitter.install").update { with_sync=true } end,
-		config = function() require("plugin_configs/nvim-treesitter") end
+		config = require("plugin_configs/nvim-treesitter")
 	},
 
-	{ "sersorrel/vim-lilypond",
-	}
+	{ "navarasu/onedark.nvim",
+		-- highly customizable color theme
+		config = require("plugin_configs/onedark")
+	},
 }
