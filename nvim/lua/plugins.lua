@@ -55,12 +55,18 @@ require("lazy").setup
 		config = require("plugin_configs.lazygit")
 	},
 
-	{
-		"williamboman/mason.nvim",
+	{ "nvim-telescope/telescope.nvim",
+		-- telescope,
+		dependencies = { 'nvim-lua/plenary.nvim' },
+		event = "VeryLazy"
+	},
+
+	{ "williamboman/mason.nvim",
 		-- lsp
 		dependencies = {
 			"williamboman/mason-lspconfig.nvim",
 			"neovim/nvim-lspconfig",
+			"nvim-telescope/telescope.nvim",
 		},
 		config = require("plugin_configs.mason")
 	},
