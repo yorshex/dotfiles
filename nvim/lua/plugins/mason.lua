@@ -22,4 +22,13 @@ local config = function()
 	require("lspconfig").clangd.setup(conf)
 end
 
-return config
+return {
+	"williamboman/mason.nvim",
+	-- lsp
+	dependencies = {
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
+		"nvim-telescope/telescope.nvim",
+	},
+	config = config
+}

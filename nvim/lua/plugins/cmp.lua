@@ -68,7 +68,7 @@ local config = function()
 		}),
 		matching = { disallow_symbol_nonprefix_matching = false }
 	})
-	
+
 	-- Set up lspconfig.
 	-- local capabilities = require('cmp_nvim_lsp').default_capabilities()
 	-- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
@@ -77,4 +77,19 @@ local config = function()
 	-- }
 end
 
-return config
+return {
+	"hrsh7th/nvim-cmp",
+	-- completion
+	dependencies = {
+		"hrsh7th/cmp-buffer",
+		"hrsh7th/cmp-path",
+		"hrsh7th/cmp-cmdline",
+		"hrsh7th/cmp-nvim-lua",
+		"hrsh7th/cmp-nvim-lsp",
+		"petertriho/cmp-git",
+
+		"neovim/nvim-lspconfig",
+	},
+	event = "VeryLazy",
+	config = config
+}

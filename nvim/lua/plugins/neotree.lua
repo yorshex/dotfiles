@@ -35,4 +35,14 @@ local config = function()
 	map("n", "<leader>F", ":Neotree reveal action=focus position=current<CR>", noresi)
 end
 
-return config
+return {
+	"nvim-neo-tree/neo-tree.nvim",
+	-- a file manager within the editor
+	branch = "v3.x",
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"nvim-tree/nvim-web-devicons",
+		"muniftanjim/nui.nvim",
+	},
+	config = config
+}

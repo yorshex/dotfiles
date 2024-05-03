@@ -59,4 +59,8 @@ local config = function()
 	require("onedark").load()
 end
 
-return config
+return {
+	"navarasu/onedark.nvim",
+	-- highly customizable color theme
+	config = config
+}

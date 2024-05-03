@@ -15,4 +15,8 @@ local config = function()
 	local parser_configs = require "nvim-treesitter.parsers".get_parser_configs()
 end
 
-return config
+return { "nvim-treesitter/nvim-treesitter",
+	-- syntax highlighting
+	build = function() require("nvim-treesitter.install").update { with_sync=true } end,
+	config = config
+}

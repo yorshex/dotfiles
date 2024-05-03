@@ -81,11 +81,11 @@ set_default_font_size()
 --]]
 
 -- Misc
-_O.mouse = "a" -- support mouse
+_O.mouse = "a" -- enable mouse
 _O.encoding = "utf-8" -- save files in utf-8 by default
 _O.fileformat = "unix" -- use the normal one by default
 _O.scrolloff = 7 -- scroll extra 7 lines around the cursor
-_O.sidescrolloff = 19 -- scroll extra 19 columns around the cursor
+_O.sidescrolloff = 15 -- scroll extra 15 columns around the cursor
 _O.wildmenu = true -- use completion
 _O.swapfile = false -- don't create swap files, they're weird
 _O.history = 1000 -- longer cmd history
@@ -121,4 +121,4 @@ map("i", "<C-Space>", "\xA0", noresi)
 
 -- PLUGINS
 
-require("plugins")
+require("plugins_setup")
