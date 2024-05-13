@@ -1,6 +1,6 @@
 local config = function()
 	require("onedark").setup {
-		style = "warmer",
+		style = "dark",
 
 		highlights = {
 			Whitespace = {fg="$bg1"},
@@ -23,6 +23,7 @@ local config = function()
 			["@operator"] = {fg="$light_grey"},
 			["@string.escape"] = {fg="$orange"},
 
+			-- get off, lsp
 			["@lsp.type.comment"] = {fg="none",bg="none",format="none"},
 			["@lsp.type.enum"] = {fg="none",bg="none",format="none"},
 			["@lsp.type.enumMember"] = {fg="none",bg="none",format="none"},

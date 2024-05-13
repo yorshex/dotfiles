@@ -20,6 +20,11 @@ local config = function()
 
 	require("lspconfig").lua_ls.setup(conf)
 	require("lspconfig").clangd.setup(conf)
+
+	vim.diagnostic.config {
+		virtual_text = true,
+		signs = false,
+	}
 end
 
 return {

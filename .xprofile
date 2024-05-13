@@ -1,6 +1,6 @@
 #!/bin/sh
 
-[ -f ~/.fehbg ] && ~/.fehbg || hsetroot -solid "#1b1c1e" &
+[ -f ~/.fehbg ] && ~/.fehbg || hsetroot -solid "#21252b" &
 
 easyeffects --gapplication-service &
 xcompmgr &

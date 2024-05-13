@@ -51,35 +51,6 @@ _O.langmap = "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯБЮЖЭХЪ;"
              "abcdefghijklmnopqrstuvwxyz\\,\\.\\;\\\'\\[\\]"
              -- make russian layout work in some cases
 
--- Font
-
---[[
-font_size = 0
-function set_font_option()
-	vim._O.guifont = "IosevkaTerm NF:h" .. font_size
-end
-function set_default_font_size()
-	font_size = 14
-	set_font_option()
-end
-function increase_font_size()
-	font_size = font_size + 1
-	if font_size > 36 then font_size = 36 end
-	set_font_option()
-end
-function decrease_font_size()
-	font_size = font_size - 1
-	if font_size < 9 then font_size = 9 end
-	set_font_option()
-end
-
-set_default_font_size()
-
--- map("n", "<C-0>", ":lua set_default_font_size()<cr>", noresi)
--- map("n", "<C-->", ":lua decrease_font_size()<cr>", noresi)
--- map("n", "<C-=>", ":lua increase_font_size()<cr>", noresi)
---]]
-
 -- Misc
 _O.mouse = "a" -- enable mouse
 _O.encoding = "utf-8" -- save files in utf-8 by default
@@ -111,9 +82,8 @@ map("n", "<leader>`e", ":set expandtab!<CR>:set expandtab?<CR>", noresi)
 map("n", "<leader>w", "<C-w>", noresi)
 
 map("", "<C-y>", '"+y', noresi)
+map("", "<C-y><C-y>", '"+yy', noresi)
 map("", "<C-p>", '"+p', noresi)
-map("", "<C-c>", '"+y', noresi)
-map("", "<C-v>", '"+P', noresi)
 
 map("i", "<S-Tab>", "<C-v><Tab>", noresi)
 map("i", "<C-Space>", "\xA0", noresi)
