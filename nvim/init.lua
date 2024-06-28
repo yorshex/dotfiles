@@ -81,8 +81,9 @@ map("n", "<leader>`e", ":set expandtab!<CR>:set expandtab?<CR>", noresi)
 
 map("n", "<leader>w", "<C-w>", noresi)
 
-map("", "<C-y>", '"+y', noresi)
-map("", "<C-y><C-y>", '"+yy', noresi)
+map("n", "<C-y>", '"+y', noresi)
+map("n", "<C-y><C-y>", '"+yy', noresi)
+map("v", "<C-y>", '"+y', noresi)
 map("", "<C-p>", '"+p', noresi)
 
 map("i", "<S-Tab>", "<C-v><Tab>", noresi)

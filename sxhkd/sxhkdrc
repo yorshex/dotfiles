@@ -39,3 +39,11 @@ super+{minus,equal}
 # mute sound
 super+BackSpace
 	pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -SIGRTMIN+1 dwmblocks
+
+# ncmpcpp
+super+n
+	st ncmpcpp
+
+# mpc
+super+{apostrophe,bracketleft,bracketright}
+	mpc {toggle,prev,next} && pkill -SIGRTMIN+2 dwmblocks

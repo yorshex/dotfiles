@@ -9,22 +9,22 @@ local config = function()
 			CursorLineNr = {fg="$yellow"},
 
 			-- syntax hl
-			["@parameter"] = {fg="none", fmt="italic"},
-			["@preproc"] = {fg="$red"},
-			["@define"] = {fg="$red"}, -- why isn't it @preproc?
-			["@include"] = {fg="$red"}, -- why isn't it @preproc either?!
+			-- ["@parameter"] = {fg="none", fmt="italic"},
+			-- ["@preproc"] = {fg="$red"},
+			-- ["@define"] = {fg="$red"}, -- why isn't it @preproc?
+			-- ["@include"] = {fg="$red"}, -- why isn't it @preproc either?!
 			["@type"] = {fg="$yellow"},
 			["@type.builtin"] = {fg="$yellow"},
-			["@property"] = {fg="none"},
+			-- ["@property"] = {fg="none"},
 			["@field"] = {fg="none"},
 			["@function"] = {fg="$blue"},
 			["@function.builtin"] = {fg="none"},
 			["@function.macro"] = {fg="none"},
 			["@operator"] = {fg="$light_grey"},
-			["@string.escape"] = {fg="$orange"},
+			-- ["@string.escape"] = {fg="$orange"},
 
 			-- get off, lsp
-			["@lsp.type.comment"] = {fg="none",bg="none",format="none"},
+			-- ["@lsp.type.comment"] = {fg="none",bg="none",format="none"},
 			["@lsp.type.enum"] = {fg="none",bg="none",format="none"},
 			["@lsp.type.enumMember"] = {fg="none",bg="none",format="none"},
 			["@lsp.type.interface"] = {fg="none",bg="none",format="none"},
