@@ -24,7 +24,7 @@ _O.cursorlineopt = "number"
 -- Whitespace visibility
 _O.listchars = "space:·,nbsp:_,tab:——→,extends:→,precedes:←" -- set whitespace
                                                              -- characters
-_O.list = true -- show whitespace characters
+_O.list = false -- show whitespace characters
 
 -- Appearance
 _O.termguicolors = true -- use gui colors in terminal
