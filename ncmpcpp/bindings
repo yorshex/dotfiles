@@ -24,6 +24,8 @@ def_key "l"
 	slave_screen
 def_key "l"
 	volume_up
+def_key "t"
+	show_lyrics
 def_key "h"
 	previous_column
 def_key "h"

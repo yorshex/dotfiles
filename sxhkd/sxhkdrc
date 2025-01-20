@@ -2,7 +2,7 @@
 
 # open web
 super+w
-	chromium
+	firefox
 
 # take a screenshot
 Print
@@ -42,7 +42,7 @@ super+BackSpace
 
 # ncmpcpp
 super+n
-	st ncmpcpp
+	st -n ncmpcpp ncmpcpp
 
 # mpc
 super+{apostrophe,bracketleft,bracketright}

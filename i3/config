@@ -163,9 +163,4 @@ client.placeholder      $c_bg0 $c_bg0 $c_cyan $c_bg0 $c_bg0
 
 client.background       $c_bg0
 
-exec_always --no-startup-id xsetroot -solid "#101012"
-
 smart_borders on
-
-exec --no-startup-id easyeffects --gapplication-service
-exec --no-startup-id flameshot

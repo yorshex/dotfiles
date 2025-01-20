@@ -1,0 +1,20 @@
+#!/bin/sh
+
+error () { notify-send "$@"; exit 1; }
+
+store="$HOME/.password-store"
+[ "$PASSWORD_STORE_DIR" ] && store="$PASSWORD_STORE_DIR"
+
+[ -e "$store" ] || error "Error: password store ${store} doesn't exist"
+[ -d "$store" ] || error "Error: password store ${store} is not a directory"
+
+password=$(find "$store" -type f -name '*.gpg' |
+	sed 's=^'"$store"'/\(.*\)\.gpg$=\1=' |
+	dmenu -p "pass" -i -F -g 4 -l 20)
+
+[ -z "$password" ] && exit 0
+[ -f "${store}/${password}.gpg" ] ||
+	error "Error: ${password} is not in the password store"
+
+pass show -c -- "$password" &&
+	notify-send "Copied ${password} to clipboard" 'Will clear in 45 seconds.'
