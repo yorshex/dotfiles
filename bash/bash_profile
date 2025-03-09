@@ -4,6 +4,9 @@ export BEMOJI_PICKER_CMD='dmenu -l 20 -g 3 -i -F -fn Iosevka-15'
 export SDL_SOUNDFONTS=/usr/share/soundfonts/default.sf2
 export ANDROID_SDK_ROOT=/opt/android-sdk
 
+export _JAVA_AWT_WM_NONREPARENTING=1
+export AWT_TOOLKIT=MToolKit
+
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -31,4 +34,4 @@ export EDITOR=nvim
 
 startx
 
-[ "$SHELL" = /usr/bin/bash -a -f ~/.bashrc ] && . .bashrc
+[ "$SHELL" = /usr/bin/bash -a -f ~/.bashrc ] && . ~/.bashrc
