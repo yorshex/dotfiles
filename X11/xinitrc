@@ -8,7 +8,9 @@ dunst &
 flameshot &
 xautolock -time 10 -locker slock &
 sxhkd &
+otd-daemon &
+slskd &
 
 while :; do
-	ssh-agent dwm || break
+	_JAVA_AWT_WM_NONREPARENTING=1 ssh-agent dwm || break
 done

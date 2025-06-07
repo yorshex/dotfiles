@@ -1,7 +1,6 @@
 -- SHORTCUTS
 
 -- Vim tables
-local _G = vim.g
 local _O = vim.o
 local env = vim.env
 
@@ -69,7 +68,7 @@ vim.cmd [[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe 
 local map = vim.api.nvim_set_keymap
 local noresi = {noremap = true,  silent = true}
 
-_G.mapleader = " "
+vim.g.mapleader = " "
 _O.timeout = true
 _O.timeoutlen = 2000
 
@@ -82,7 +81,7 @@ map("n", "<leader>`l", ":set list!<CR>:set list?<CR>", noresi)
 map("n", "<leader>`e", ":set expandtab!<CR>:set expandtab?<CR>", noresi)
 
 map("n", "<leader>w", "<C-w>", noresi)
-map("n", "<leader>j", 'mz"yyy"yP`z', noresi)
+map("n", "<C-j>", 'mz"yyy"yP`z', noresi)
 
 map("n", "<C-y>", '"+y', noresi)
 map("n", "<C-y><C-y>", '"+yy', noresi)

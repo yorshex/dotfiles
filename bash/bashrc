@@ -6,9 +6,9 @@
 export CLICOLOR=1
 export HISTCONTROL=ignoreboth
 
-. /usr/share/bash-completion/bash_completion
+[ -f /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 
-[ -r ~/.dir_colors ] && eval `dircolors ~/.dir_colors`
+[ -f ~/.dir_colors ] && eval `dircolors ~/.dir_colors`
 
 mkcd() { mkdir -p $1 && cd $1; }
 emenv() { cd ~/software/emsdk; EMSDK_QUIET=1 source ./emsdk_env.sh; cd -; }
@@ -24,12 +24,14 @@ alias sxiv='nsxiv'
 alias vpn-on='nmcli connection up wg0'
 alias vpn-off='nmcli connection down wg0'
 alias yt-dlp='yt-dlp --cookies-from-browser firefox'
+alias yt-dlp-proxy='proxychains yt-dlp --cookies-from-browser firefox'
 
 bind 'set completion-ignore-case on'
 bind 'set show-all-if-ambiguous on'
 bind 'set colored-stats on'
 
 MY_USER='\[\e[36m\]\u@\h'
-MY_PWD='\[\e[32m\]`echo "\w" | sed -e "s/.\{2,\}\/\(.*\/.*\/.*\)/…\/\1/"`'
+# MY_PWD='\[\e[32m\]`echo "\w" | sed -e "s/.\{2,\}\/\(.*\/.*\/.*\)/…\/\1/"`'
+MY_PWD='\[\e[32m\]\w'
 MY_DOLR='`[ $? -eq 0 ] && printf "\[\e[0m\]" || printf "\[\e[1;31m\]"`\$'
-PS1="${MY_PWD} ${MY_DOLR}\[\e[0m\] "
+PS1="\n${MY_PWD}\n${MY_DOLR}\[\e[0m\] "
