@@ -1,16 +1,28 @@
 #!/bin/sh
 
-[ -f ~/.fehbg ] && ~/.fehbg || hsetroot -solid "#21252b" &
-easyeffects --gapplication-service &
-xcompmgr &
-dwmblocks &
-dunst &
-flameshot &
-xautolock -time 10 -locker slock &
-sxhkd &
-otd-daemon &
-slskd &
+autorun() {
+	pgrep -x "$1" > /dev/null || "$@" &
+}
 
-while :; do
-	_JAVA_AWT_WM_NONREPARENTING=1 ssh-agent dwm || break
-done
+start_dwm() {
+	autorun dwmblocks
+	export _JAVA_AWT_WM_NONREPARENTING=1
+	while :; do
+		ssh-agent dwm || break
+	done
+}
+
+start_bspwm() {
+	bspwm
+}
+
+[ -f ~/.fehbg ] && ~/.fehbg || hsetroot -solid "#21252b" &
+autorun easyeffects --gapplication-service
+autorun xcompmgr
+autorun dunst
+autorun flameshot
+autorun xautolock -time 10 -locker slock
+autorun otd-daemon
+autorun pcmanfm -d
+
+start_bspwm

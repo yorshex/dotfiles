@@ -14,17 +14,23 @@ mkcd() { mkdir -p $1 && cd $1; }
 emenv() { cd ~/software/emsdk; EMSDK_QUIET=1 source ./emsdk_env.sh; cd -; }
 all-music() { mpc ls | mpc add; }
 sa() { ssh-add ~/.ssh/"$1"; }
+alias dash='PS1= dash'
+alias sh='PS1= sh'
 alias ls='ls -h --color=auto'
+alias sl='ls'
 alias grep='grep --color=auto'
 alias diff='diff -u --color=auto'
 alias mv='mv -i'
 alias rm='rm -i'
 alias nivm='nvim'
 alias sxiv='nsxiv'
-alias vpn-on='nmcli connection up wg0'
-alias vpn-off='nmcli connection down wg0'
 alias yt-dlp='yt-dlp --cookies-from-browser firefox'
 alias yt-dlp-proxy='proxychains yt-dlp --cookies-from-browser firefox'
+# uxn aliases
+alias nasu='uxnemu ~/roms/nasu.rom'
+alias drif='uxncli ~/roms/drifblim.rom'
+alias uxnlin='uxncli ~/roms/uxnlin.rom'
+alias uxnfor='uxncli ~/roms/uxnfor.rom'
 
 bind 'set completion-ignore-case on'
 bind 'set show-all-if-ambiguous on'

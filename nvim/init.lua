@@ -62,6 +62,8 @@ vim.api.nvim_create_user_command("MyConfig",
 
 vim.cmd [[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif]]
 
+vim.cmd [[au BufRead,BufNewFile *.tal set filetype=uxntal]]
+
 
 -- KEYMAPS
 
