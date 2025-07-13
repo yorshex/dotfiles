@@ -13,10 +13,11 @@ start_dwm() {
 }
 
 start_bspwm() {
-	bspwm
+	export _JAVA_AWT_WM_NONREPARENTING=1
+	ssh-agent bspwm
 }
 
-[ -f ~/.fehbg ] && ~/.fehbg || hsetroot -solid "#21252b" &
+[ -f ~/.fehbg ] && ~/.fehbg || hsetroot -solid "#2e3440" &
 autorun easyeffects --gapplication-service
 autorun xcompmgr
 autorun dunst
