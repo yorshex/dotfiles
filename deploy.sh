@@ -5,8 +5,6 @@ symlink() {
 	ln -sf "${PWD}/$1" "${HOME}/$2"
 }
 
-mkdir -p "${HOME}/bin"
-
 if [ ! -f ./commands ]; then
 	cp './commands.def' './commands'
 	echo "'./commands.def' was copied to './commands'."
@@ -14,5 +12,7 @@ if [ ! -f ./commands ]; then
 	echo "and then run './deploy.sh' again."
 	exit
 fi
+
+mkdir -p "${HOME}/bin"
 
 . ./commands
