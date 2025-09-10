@@ -35,8 +35,8 @@ _O.smartcase = true -- only ignore lower case
 _O.shiftround = true -- align indentations
 _O.autoindent = true -- indent automatically
 _O.smarttab = true -- tab works better in some places
-_O.tabstop = 4 -- tabulation size
-_O.shiftwidth = 4 -- indentation size
+_O.tabstop = 8 -- tabulation size
+_O.shiftwidth = 8 -- indentation size
 
 -- Langmap
 _O.langmap = "ЁФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯБЮЖЭХЪ;"..

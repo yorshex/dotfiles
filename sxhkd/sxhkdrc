@@ -6,7 +6,7 @@
 super + Return
 	st
 # program launcher:
-super + o; {_,super + }o
+super + o
 	dmenu_run
 # make sxhkd reload its configuration files:
 super + Escape
@@ -34,21 +34,21 @@ super + BackSpace
 # mpc:
 super + {apostrophe,comma,period}
 	mpc {toggle,prev,next}
-# web browser:
-super + o; {_,super + }w
+# open web browser:
+super + w
 	firefox
-# password manager:
-super + o; {_,super + }p
-	dmenu_pass
-# volume control:
-super + o; {_,super + }v
-	pavucontrol
 # open boomer:
-super + o; {_,super + }b
+super + b
 	boomer -c ~/.config/boomer/config
-# ncmpcpp:
-super + o; {_,super + }n
+# open ncmpcpp:
+super + n
 	st -n ncmpcpp ncmpcpp
+# open password manager:
+super + p
+	dmenu_pass
+# open volume control:
+super + a
+	pavucontrol
 
 #
 # bspwm hotkeys
@@ -79,7 +79,7 @@ super + ctrl + {m,x,y,z}
 # focus/swap
 #
 
-# focus or send the node in the given direction:
+# focus or swap the node in the given direction:
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 # focus the next/previous desktop in the current monitor:
@@ -89,8 +89,8 @@ super + bracket{left,right}
 super + Tab
 	bspc monitor -f next
 # focus or send to the given desktop:
-super + {_,shift + }{1-6}
-	bspc {desktop -f,node -d} '^{1-6}'
+super + {_,shift + }{1-4,z,x,c,v}
+	bspc {desktop -f,node -d} {A1,A2,A3,A4,B1,B2,B3,B4}
 
 #
 # preselect

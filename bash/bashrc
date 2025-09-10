@@ -36,8 +36,15 @@ bind 'set completion-ignore-case on'
 bind 'set show-all-if-ambiguous on'
 bind 'set colored-stats on'
 
-MY_USER='\[\e[36m\]\u@\h'
-# MY_PWD='\[\e[32m\]`echo "\w" | sed -e "s/.\{2,\}\/\(.*\/.*\/.*\)/…\/\1/"`'
-MY_PWD='\[\e[32m\]\w'
-MY_DOLR='`[ $? -eq 0 ] && printf "\[\e[0m\]" || printf "\[\e[1;31m\]"`\$'
-PS1="\n${MY_PWD}\n${MY_DOLR}\[\e[0m\] "
+__prompt_command() {
+	local status="$?"
+	local widget_user='\[\e[36m\]\u@\h'
+	local widget_pwd='\[\e[32m\]\w'
+	local widget_branch=''
+	[ -d ./.git ] && local widget_branch=' \[\e[0m\]('`git branch --show-current 2> /dev/null`')'
+	local widget_dollar='\[\e[0m\]\$'
+	[ "$status" -ne 0 ] && local widget_dollar='\[\e[1;31m\]\$'
+	PS1="\n  ${widget_pwd}${widget_branch}\n${widget_dollar}\[\e[0m\] "
+}
+
+PROMPT_COMMAND=__prompt_command
