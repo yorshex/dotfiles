@@ -1,7 +1,12 @@
 #!/bin/sh
 
+basedir() {
+	echo "$1" | sed 's=/[^/]*$=='
+}
+
 symlink() {
 	echo "Symlink: '~/$2' -> './$1'"
+	mkdir -p `basedir "${HOME}/$2"`
 	ln -sf "${PWD}/$1" "${HOME}/$2"
 }
 
