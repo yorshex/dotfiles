@@ -1,30 +1,3 @@
 #!/bin/sh
 
-autorun() {
-	pgrep -x "$1" > /dev/null || "$@" &
-}
-
-start_dwm() {
-	autorun dwmblocks
-	export _JAVA_AWT_WM_NONREPARENTING=1
-	while :; do
-		ssh-agent dwm || break
-	done
-}
-
-start_bspwm() {
-	export _JAVA_AWT_WM_NONREPARENTING=1
-	ssh-agent bspwm
-}
-
-[ -f ~/.fehbg ] && ~/.fehbg || hsetroot -solid "#2e3440" &
-autorun easyeffects --gapplication-service
-autorun xcompmgr
-autorun dunst
-autorun flameshot
-autorun xautolock -time 10 -locker slock
-autorun otd-daemon
-autorun pcmanfm -d
-autorun qbittorrent
-
-start_bspwm
+dbus-run-session custom_session.sh

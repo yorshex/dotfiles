@@ -1,0 +1,10 @@
+#!/bin/sh
+
+choice=`printf 'lock\nreboot\npoweroff\nquit bspwm' | dmenu -p 'power' -l 4`
+
+case "$choice" in
+	'lock') slock ;;
+	'reboot') systemctl reboot ;;
+	'poweroff') systemctl poweroff ;;
+	'quit bspwm') bspc quit ;;
+esac
