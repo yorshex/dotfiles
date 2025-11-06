@@ -4,7 +4,7 @@
 #symlink bin/dmenu_pass        bin/dmenu_pass
 #symlink bin/dmenu_power_bspwm bin/dmenu_power_bspwm
 #symlink bspwm/bspwmrc         .config/bspwm/bspwmrc
-#symlink dunst/dunstrc         .config/dunst/dunst
+#symlink dunst/dunstrc         .config/dunst/dunstrc
 #symlink i3/config             .config/i3/config
 #symlink i3blocks/config       .config/i3blocks/config
 #symlink mpd/mpd.conf          .config/mpd/mpd.conf
