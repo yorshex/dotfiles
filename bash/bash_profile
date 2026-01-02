@@ -3,7 +3,8 @@
 export BEMOJI_PICKER_CMD='dmenu -l 20 -g 4 -i -F -fn Iosevka-18'
 export SDL_SOUNDFONTS=/usr/share/soundfonts/default.sf2
 export SOUND_FONT=/usr/share/soundfonts/default.sf2
-export ANDROID_SDK_ROOT=/opt/android-sdk
+export ANDROID_HOME="$HOME/android/sdk"
+export ANDROID_SDK_ROOT="$ANDROID_HOME"
 export ANDROID_NDK_ROOT=/opt/android-ndk
 
 export AWT_TOOLKIT=MToolKit
