@@ -41,7 +41,9 @@ __prompt_command() {
 	local widget_user='\[\e[36m\]\u@\h'
 	local widget_pwd='\[\e[32m\]\w'
 	local widget_branch=''
-	[ -d ./.git ] && local widget_branch=' \[\e[0m\]('`git branch --show-current 2> /dev/null`')'
+	git status > /dev/null 2>&1
+	local git_status="$?"
+	[ "$git_status" -eq 0 ] && local widget_branch=' \[\e[0m\]('`git branch --show-current 2> /dev/null`')'
 	local widget_dollar='\[\e[0m\]\$'
 	[ "$status" -ne 0 ] && local widget_dollar='\[\e[1;31m\]\$'
 	PS1="\n  ${widget_pwd}${widget_branch}\n${widget_dollar}\[\e[0m\] "
