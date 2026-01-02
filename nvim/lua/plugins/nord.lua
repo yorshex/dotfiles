@@ -11,6 +11,7 @@ local config = function()
 	hi link uxnRawAddress Label
 	hi link uxnPadding Label
 	hi link uxnJump Underlined
+	hi link uxnString String
 	]]
 end
 

@@ -1,61 +1,60 @@
 -- SHORTCUTS
 
 -- Vim tables
-local _O = vim.o
+local opt = vim.o
 local env = vim.env
 
 
 -- OPTIONS
 
--- Improved expirience B)
-_O.compatible = false
+opt.compatible = false
 
 -- Line numbers
-_O.number = true
-_O.relativenumber = true
-_O.cursorline = true
-_O.cursorlineopt = "number"
+opt.number = true
+opt.relativenumber = true
+opt.cursorline = true
+opt.cursorlineopt = "number"
 
 -- Whitespace visibility
-_O.listchars = "space:·,nbsp:_,tab:——→,extends:→,precedes:←" -- set whitespace characters
-_O.list = true -- show whitespace characters
+opt.listchars = "space:·,nbsp:_,tab:——→,extends:→,precedes:←" -- set whitespace characters
+opt.list = true -- show whitespace characters
 
 -- Appearance
-_O.termguicolors = true -- use gui colors in terminal
-_O.guicursor = "n-c-sm:block,i-ci-ve:ver25,v-r-cr-o:hor20" -- cursor shapes
+opt.termguicolors = true -- use gui colors in terminal
+opt.guicursor = "n-c-sm:block,i-ci-ve:ver25,v-r-cr-o:hor20" -- cursor shapes
 
 -- Search
-_O.hlsearch = true -- highlight search petterns
-_O.incsearch = true -- automatically search while typing
-_O.ignorecase = true -- ignore case
-_O.smartcase = true -- only ignore lower case
+opt.hlsearch = true -- highlight search petterns
+opt.incsearch = true -- automatically search while typing
+opt.ignorecase = true -- ignore case
+opt.smartcase = true -- only ignore if uppercase character aren't present
 
 -- Indentation
--- _O.expandtab = true -- type space instead of tabulations
-_O.shiftround = true -- align indentations
-_O.autoindent = true -- indent automatically
-_O.smarttab = true -- tab works better in some places
-_O.tabstop = 8 -- tabulation size
-_O.shiftwidth = 8 -- indentation size
+-- opt.expandtab = true -- type space instead of tabulations
+opt.shiftround = true -- align indentations
+opt.autoindent = true -- indent automatically
+opt.smarttab = true -- tab works better in some places
+opt.tabstop = 8 -- tabulation size
+opt.shiftwidth = 8 -- indentation size
 
 -- Langmap
-_O.langmap = "ЁФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯБЮЖЭХЪ;"..
+opt.langmap = "ЁФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯБЮЖЭХЪ;"..
              "~ABCDEFGHIJKLMNOPQRSTUVWXYZ\\<\\>\\:\\\"\\{\\},"..
              "ёфисвуапршолдьтщзйкыегмцчнябюжэхъ;"..
              "`abcdefghijklmnopqrstuvwxyz\\,\\.\\;\\\'\\[\\]"
              -- make russian layout work in some cases
 
 -- Misc
-_O.linebreak = true -- break lines by words
-_O.mouse = "a" -- enable mouse
-_O.encoding = "utf-8" -- save files in utf-8 by default
-_O.fileformat = "unix" -- use the normal one by default
-_O.scrolloff = 7 -- scroll extra 7 lines around the cursor
-_O.sidescrolloff = 15 -- scroll extra 15 columns around the cursor
-_O.wildmode = "longest,list,full" -- use completion
-_O.wildmenu = true -- use completion
-_O.swapfile = false -- don't create swap files, they're weird
-_O.history = 1000 -- longer cmd history
+opt.linebreak = true -- break lines by words
+opt.mouse = "a" -- enable mouse
+opt.encoding = "utf-8" -- save files in utf-8 by default
+opt.fileformat = "unix" -- use the normal one by default
+opt.scrolloff = 7 -- scroll extra 7 lines around the cursor
+opt.sidescrolloff = 15 -- scroll extra 15 columns around the cursor
+opt.wildmode = "longest,list,full" -- use completion
+opt.wildmenu = true -- use completion
+opt.swapfile = false -- don't create swap files, they're weird
+opt.history = 1000 -- longer cmd history
 
 vim.api.nvim_create_user_command("MyConfig",
 	function() vim.cmd "e ~/.config/nvim" end, {})
@@ -71,8 +70,8 @@ local map = vim.api.nvim_set_keymap
 local noresi = {noremap = true,  silent = true}
 
 vim.g.mapleader = " "
-_O.timeout = true
-_O.timeoutlen = 2000
+opt.timeout = true
+opt.timeoutlen = 2000
 
 map("", "<leader><leader>", "<Nop>", noresi)
 
@@ -82,7 +81,6 @@ map("n", "<leader>`w", ":set wrap!<CR>:set wrap?<CR>", noresi)
 map("n", "<leader>`l", ":set list!<CR>:set list?<CR>", noresi)
 map("n", "<leader>`e", ":set expandtab!<CR>:set expandtab?<CR>", noresi)
 
-map("n", "<leader>w", "<C-w>", noresi)
 map("n", "<C-j>", 'mz"yyy"yP`z', noresi)
 
 map("n", "<C-y>", '"+y', noresi)
