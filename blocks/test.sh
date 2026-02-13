@@ -1,5 +1,5 @@
 #!/bin/sh
 
-for file in `exec ls`; do
+for file in `command ls`; do
 	echo $file: `./$file`
 done
