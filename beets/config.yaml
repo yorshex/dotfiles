@@ -1,0 +1,21 @@
+directory: ~/music
+
+plugins: convert
+
+import:
+  autotag: no
+
+paths:
+  default: '$albumartist/$album/$track $title'
+  singleton: '$artist/$title'
+
+convert:
+  auto: no
+  auto_keep: yes
+  dest: /home/yorshex/musicopus
+  format: opus
+  formats:
+    opus:
+      command: ffmpeg -i '$source' -c:a libopus -b:a 96k -vbr on '$dest'
+      extension: opus
+  never_convert_lossy_files: no
