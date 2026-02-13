@@ -1,3 +1,4 @@
 #!/bin/sh
 
-dbus-run-session custom_session.sh
+#dbus-run-session custom_session.sh
+custom_session.sh
