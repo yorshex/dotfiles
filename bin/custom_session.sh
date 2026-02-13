@@ -23,7 +23,7 @@ xset r rate 200 30
 mate-polkit &
 
 [ -f ~/.fehbg ] && ~/.fehbg || hsetroot -solid "#2e3440" &
-autorun easyeffects --gapplication-service
+#autorun easyeffects --gapplication-service
 autorun xcompmgr
 autorun dunst
 autorun flameshot
