@@ -1,5 +1,6 @@
 #symlink bash/bash_profile     .bash_profile
 #symlink bash/bashrc           .bashrc
+#symlink beets/config.yaml     .config/beets/config.yaml
 #symlink bin/custom_session.sh bin/custom_session.sh
 #symlink bin/dmenu_pass        bin/dmenu_pass
 #symlink bin/dmenu_power_bspwm bin/dmenu_power_bspwm
