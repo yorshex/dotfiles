@@ -4,10 +4,11 @@ plugins: convert
 
 import:
   autotag: no
+  move: yes
 
 paths:
-  default: '$albumartist/$album/$track $title'
-  singleton: '$artist/$title'
+  default: '$albumartist/$album%aunique{}/$track $title'
+  singleton: '$artist/$title%sunique{}'
 
 convert:
   auto: no
@@ -16,6 +17,6 @@ convert:
   format: opus
   formats:
     opus:
-      command: ffmpeg -i '$source' -c:a libopus -b:a 96k -vbr on '$dest'
+      command: opusenc '$source' '$dest'
       extension: opus
   never_convert_lossy_files: no
