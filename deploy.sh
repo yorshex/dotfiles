@@ -7,7 +7,7 @@ basedir() {
 symlink() {
 	echo "Symlink: '~/$2' -> './$1'"
 	mkdir -p "$(basedir "${HOME}/$2")"
-	ln -sf "${PWD}/$1" "${HOME}/$2"
+	ln -snf "${PWD}/$1" "${HOME}/$2"
 }
 
 if [ ! -f ./commands ]; then
