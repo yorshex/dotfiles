@@ -1,5 +1,5 @@
 #!/bin/sh
 
-for file in `command ls`; do
-	echo $file: `./$file`
+for file in *; do
+	echo "$file: $(./"$file")"
 done
