@@ -28,9 +28,10 @@ export MIX_XDG=true
 export LC_ALL=en_US.UTF-8
 export HOST=`cat /etc/hostname`
 export PS1='${PWD} \$ '
-export GTK_THEME=Nordic-darker:dark
+export GTK_THEME=Adwaita:dark
 
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export EDITOR=nvim
 
+eval `ssh-agent` &>/dev/null
 [ '(' "$SHELL" = /bin/bash -o "$SHELL" = /usr/bin/bash ')' -a -f ~/.bashrc ] && . ~/.bashrc
