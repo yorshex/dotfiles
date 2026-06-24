@@ -32,11 +32,3 @@ def_key "h"
 	master_screen
 def_key "h"
 	volume_down
-def_key "4"
-  show_search_engine
-def_key "4"
-  reset_search_engine
-def_key "3"
-  show_media_library
-def_key "3"
-  toggle_media_library_columns_mode
