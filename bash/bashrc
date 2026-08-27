@@ -11,18 +11,15 @@ export HISTCONTROL=ignoreboth
 [ -f ~/.dir_colors ] && eval `dircolors ~/.dir_colors`
 
 mkcd() { mkdir -p $1 && cd $1; }
-emenv() { cd ~/software/emsdk; EMSDK_QUIET=1 source ./emsdk_env.sh; cd -; }
+emenv() { cd ~/programming/emsdk; EMSDK_QUIET=1 source ./emsdk_env.sh; cd -; }
 all-music() { mpc ls | mpc add; }
 sa() { ssh-add ~/.ssh/"$1"; }
-alias dash='PS1= dash'
-alias sh='PS1= sh'
 alias ls='ls -h --color=auto'
 alias sl='ls'
 alias grep='grep --color=auto'
 alias diff='diff -u --color=auto'
 alias mv='mv -i'
 alias rm='rm -i'
-alias nivm='nvim'
 alias sxiv='nsxiv'
 alias yt-dlp='yt-dlp --cookies-from-browser firefox'
 alias yt-dlp-proxy='proxychains yt-dlp --cookies-from-browser firefox'
