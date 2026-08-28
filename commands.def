@@ -2,6 +2,7 @@
 #symlink bash/bash_logout       .bash_logout
 #symlink bash/bashrc            .bashrc
 #symlink beets/config.yaml      .config/beets/config.yaml
+#symlink bin/brightness.sh      bin/brightness.sh
 #symlink bin/dmenu_pass         bin/dmenu_pass
 #symlink bin/dmenu_power_bspwm  bin/dmenu_power_bspwm
 #symlink bspwm/bspwmrc          .config/bspwm/bspwmrc
