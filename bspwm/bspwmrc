@@ -1,7 +1,9 @@
 #!/bin/sh
 
-killall sxhkd
-sxhkd -a Space &
+if pgrep -x sxhkd > /dev/null
+	then killall -SIGUSR1 sxhkd
+	else sxhkd -a Space &
+fi
 
 killall polybar
 if [ "$HOST" = smol ]
