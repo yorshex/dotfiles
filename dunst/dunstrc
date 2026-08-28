@@ -7,7 +7,6 @@ icon_position=left
 min_icon_size=32
 max_icon_size=32
 vertical_alignment=top
-timeout=30
 sort=no
 gap_size=4
 offset=(16, 35)
@@ -15,9 +14,11 @@ offset=(16, 35)
 [urgency_low]
 foreground="#939baa"
 frame_color="#4c566a"
+timeout=1
 
 [urgency_normal]
 frame_color="#939baa"
+timeout=30
 override_pause_level=30
 
 [urgency_critical]
