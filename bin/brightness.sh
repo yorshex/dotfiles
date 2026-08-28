@@ -15,12 +15,16 @@ domath() {
 	echo "$1" | bc || error "math error"
 }
 
-is_integer() {
-	case "${1#[+-]}" in
+is_digits() {
+	case "$1" in
 	*[!0123456789]*) return 1 ;;
 	'') return 1 ;;
 	*) return 0 ;;
 	esac
+}
+
+is_integer() {
+	is_digits "${1#[+-]}"
 }
 
 # basic getters/setters
@@ -63,4 +67,8 @@ if is_integer "$1"; then
 	set_brightness100 "$value"
 fi
 
-notify-send -e -u low "Brightness: $(get_brightness100)%"
+nidfile=/tmp/yorshex_dotfiles-last_brightness_notification_id
+nid=0
+[ -f "$nidfile" ] && nid="$(cat "$nidfile")"
+is_digits "$nid" || nid=0
+notify-send -u low -e -r "$nid" -p "Brightness: $(get_brightness100)%" >"$nidfile"
