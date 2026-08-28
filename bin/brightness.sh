@@ -67,8 +67,12 @@ if is_integer "$1"; then
 	set_brightness100 "$value"
 fi
 
-nidfile=/tmp/yorshex_dotfiles-last_brightness_notification_id
-nid=0
-[ -f "$nidfile" ] && nid="$(cat "$nidfile")"
-is_digits "$nid" || nid=0
-notify-send -u low -e -r "$nid" -p "Brightness: $(get_brightness100)%" >"$nidfile"
+if [ "$DISPLAY" ]; then
+	nidfile=/tmp/yorshex_dotfiles-last_brightness_notification_id
+	nid=0
+	[ -f "$nidfile" ] && nid="$(cat "$nidfile")"
+	is_digits "$nid" || nid=0
+	notify-send -u low -e -r "$nid" -p "Brightness: $(get_brightness100)%" >"$nidfile"
+else
+	echo "Brightness: $(get_brightness100)%"
+fi
