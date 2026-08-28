@@ -16,9 +16,12 @@ super + Escape
 # programs
 #
 
-# screenshot:
+# screenshot region:
 Print
-	flameshot gui
+	maim -usb 2 | xclip -selection clipboard -t image/png
+# screenshot whole screen:
+Shift+Print
+	maim -u | xclip -selection clipboard -t image/png
 # emoji menu:
 super + semicolon
 	bemoji -n -p -P 0
