@@ -28,9 +28,16 @@ super + alt + x
 # volume up/down:
 super + {minus,equal} 
 	pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
+{XF86AudioLowerVolume,XF86AudioRaiseVolume}
+	pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
 # mute sound:
 super + BackSpace
 	pactl set-sink-mute @DEFAULT_SINK@ toggle
+XF86AudioMute
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+# mute mic:
+XF86AudioMicMute
+	pactl set-source-mute @DEFAULT_SOURCE@ toggle
 # mpc:
 super + {apostrophe,comma,period}
 	mpc {toggle,prev,next}
