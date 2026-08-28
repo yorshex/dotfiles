@@ -36,5 +36,6 @@ return {
 	"nvim-lualine/lualine.nvim",
 	-- custom statusline at the bottom of every window
 	dependencies = { "kyazdani42/nvim-web-devicons", optional = true },
+	cond = (vim.env.TERM ~= 'linux'),
 	config = config
 }

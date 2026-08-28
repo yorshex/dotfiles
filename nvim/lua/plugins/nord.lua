@@ -17,5 +17,6 @@ end
 
 return {
 	"arcticicestudio/nord-vim",
+	cond = (vim.env.TERM == 'xterm-256color' or vim.env.TERM == 'st-256color'),
 	config = config
 }

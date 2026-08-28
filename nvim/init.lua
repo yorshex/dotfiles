@@ -20,7 +20,9 @@ opt.listchars = "space:·,nbsp:_,tab:——→,extends:→,precedes:←" -- set 
 opt.list = true -- show whitespace characters
 
 -- Appearance
-opt.termguicolors = true -- use gui colors in terminal
+if env.TERM == 'xterm-256color' or env.TERM == 'st-256color' then
+	opt.termguicolors = true -- use gui colors in terminal
+end
 opt.guicursor = "n-c-sm:block,i-ci-ve:ver25,v-r-cr-o:hor20" -- cursor shapes
 
 -- Search
