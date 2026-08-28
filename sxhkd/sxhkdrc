@@ -20,7 +20,7 @@ super + Escape
 Print
 	maim -usb 2 | xclip -selection clipboard -t image/png
 # screenshot whole screen:
-Shift+Print
+shift + Print
 	maim -u | xclip -selection clipboard -t image/png
 # emoji menu:
 super + semicolon
