@@ -89,8 +89,8 @@ super + bracket{left,right}
 super + Tab
 	bspc monitor -f next
 # focus or send to the given desktop:
-super + {_,shift + }{1-4,z,x,c,v}
-	bspc {desktop -f,node -d} {A1,A2,A3,A4,B1,B2,B3,B4}
+super + {_,shift + }{1-4}
+	bspc {desktop -f,node -d} {1,2,3,4}
 
 #
 # preselect

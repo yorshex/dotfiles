@@ -1,13 +1,12 @@
 #!/bin/sh
 
-pgrep -x sxhkd > /dev/null || sxhkd -a Space &
-
-bspc monitor HDMI-0 -d A1 A2 A3 A4
-bspc monitor DVI-D-0 -d B1 B2 B3 B4
+killall sxhkd
+sxhkd -a Space &
 
 killall polybar
 polybar -c ~/.config/polybar/config.ini first &
-polybar -c ~/.config/polybar/config.ini second &
+
+bspc monitor -d 1 2 3 4
 
 bspc config border_width 2
 bspc config window_gap   8
