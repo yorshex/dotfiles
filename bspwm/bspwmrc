@@ -11,7 +11,7 @@ if [ "$HOST" = smol ]
 	else polybar -c ~/.config/polybar/config.ini first &
 fi
 
-bspc monitor -d 1 2 3 4
+bspc monitor -d 1 2 3 4 5 6 7 8
 
 bspc config border_width 2
 bspc config window_gap   8
