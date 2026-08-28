@@ -4,7 +4,10 @@ killall sxhkd
 sxhkd -a Space &
 
 killall polybar
-polybar -c ~/.config/polybar/config.ini first &
+if [ "$HOST" = smol ]
+	then polybar -c ~/.config/polybar/config.ini first-battery &
+	else polybar -c ~/.config/polybar/config.ini first &
+fi
 
 bspc monitor -d 1 2 3 4
 
