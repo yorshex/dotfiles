@@ -25,9 +25,9 @@ shift + Print
 # emoji menu:
 super + semicolon
 	bemoji -n -p -P 0
-# power:
+# slock:
 super + alt + x
-	dmenu_power_bspwm
+	slock
 # volume up/down:
 super + {minus,equal} 
 	pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
