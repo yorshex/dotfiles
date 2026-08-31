@@ -1,6 +1,6 @@
-for mspec in $(polybar --list-monitors); do
-	m="$(echo "$mspec" | cut -d: -f1)"
-	[ -f /sys/class/power_supply/BAT0 ] && rmods="$rmods battery"
-	echo "$mspec" | grep '(primary)' && rmods="$rmods systray"
-	MONITOR="$m" RMODULES="$rmods" polybar --reload first &
+for m in $(polybar --list-monitors | cut -d: -f1); do
+	rmods="mpd volume layout date"
+	[ -d /sys/class/power_supply/BAT0 ] && rmods="$rmods battery"
+	polybar --list-monitors | grep "$m" | grep '(primary)' && rmods="$rmods systray"
+	MONITOR="$m" RMODULES="$rmods" polybar first &
 done
