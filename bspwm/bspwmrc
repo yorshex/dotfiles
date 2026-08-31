@@ -5,11 +5,7 @@ if pgrep -x sxhkd > /dev/null
 	else sxhkd -a Space &
 fi
 
-killall polybar
-if [ "$HOST" = smol ]
-	then polybar -c ~/.config/polybar/config.ini first-battery &
-	else polybar -c ~/.config/polybar/config.ini first &
-fi
+launch_polybar.sh
 
 bspc monitor -d 1 2 3 4 5 6 7 8
 
