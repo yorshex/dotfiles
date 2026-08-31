@@ -5,6 +5,7 @@
 #symlink bin/brightness.sh      bin/brightness.sh
 #symlink bin/dmenu_pass         bin/dmenu_pass
 #symlink bin/dmenu_power_bspwm  bin/dmenu_power_bspwm
+#symlink bin/launch_polybar.sh  bin/launch_polybar.sh
 #symlink bspwm/bspwmrc          .config/bspwm/bspwmrc
 #symlink dunst/dunstrc          .config/dunst/dunstrc
 #symlink i3/config              .config/i3/config
