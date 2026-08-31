@@ -102,7 +102,7 @@ super + bracket{left,right}
 super + Tab
 	bspc monitor -f next
 # focus or send to the given desktop:
-super + {_,shift + }{1-8}
+super + {_,shift + }{1-4,z,x,c,v}
 	bspc {desktop -f,node -d} {1-8}
 
 #
