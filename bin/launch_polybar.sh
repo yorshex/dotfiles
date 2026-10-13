@@ -1,3 +1,4 @@
+killall polybar
 for m in $(polybar --list-monitors | cut -d: -f1); do
 	rmods="mpd volume layout date"
 	[ -d /sys/class/power_supply/BAT0 ] && rmods="$rmods battery"

@@ -1,5 +1,6 @@
 #!/bin/sh
 
-for file in *; do
+for file in *.sh; do
+	[ "$file" = 'test.sh' ] && continue
 	echo "$file: $(./"$file")"
 done

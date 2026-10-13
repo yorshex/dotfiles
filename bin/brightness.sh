@@ -8,8 +8,9 @@ fbright="${devpath}/brightness"
 fmax="${devpath}/max_brightness"
 
 error() { echo "error: $1"; exit 1; }
-domath() { echo "$1" | bc || error "math error"; }
-get_brightness() { domath "$(cat "$fbright") * 100 / $maxbright"; }
+get_brightness() {
+	echo $(($(cat "$fbright") * 100 / maxbright));
+}
 is_digits() {
 	case "$1" in
 	*[!0123456789]*) return 1 ;;
@@ -25,13 +26,13 @@ maxbright="$(cat "$fmax")"
 
 if is_digits "${1#[+-]}"; then
 	case "$1" in
-	[+-]*) value="$(domath "$(get_brightness) $1")" ;;
-	*) value="$1" ;;
+	([+-]*) value=$(($(get_brightness) + $1)) ;;
+	(*) value="$1" ;;
 	esac
 
 	[ "$value" -lt 0 ] && value=0
 	[ "$value" -gt 100 ] && value=100
-	rawvalue="$(domath "$value * $maxbright / 100 + 1")"
+	rawvalue=$((value * maxbright / 100 + 1))
 	[ "$rawvalue" -gt "$maxbright" ] && rawvalue="$maxbright"
 	[ "$rawvalue" -lt 1 ] && rawvalue=1
 	echo "$rawvalue" > "$fbright"

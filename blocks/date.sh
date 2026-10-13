@@ -1,9 +1,9 @@
 #!/bin/sh
 
 yday=$(date +'%j')
-amon=$(echo "($yday-1)/14" | bc)
-amday=$(echo "($yday-1)%14" | bc)
-[ "$yday" -lt 365 ] &&
+amon=$(((yday-1)/14))
+amday=$(((yday-1)%14))
+[ "$yday" -le 364 ] &&
 	amonl=$(echo "obase=16;65+$amon" | bc | xxd -r -p) ||
 	amonl='+'
 arv=$(printf "%c%02d" "$amonl" "$amday")
