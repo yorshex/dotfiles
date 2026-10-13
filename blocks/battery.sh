@@ -10,6 +10,7 @@ case "$t" in
 esac
 s="$(cat "$devpath/status")"
 [ "$s" = 'Charging' ] && i="${i}󱐋"
-[ "$s" = 'Not charging' ] && [ "$level" -lt 100 ] && i="${i}"
+[ "$s" != 'Charging' ] && [ "$level" -le 30 ] && i="${i}"
+[ "$s" = 'Not charging' ] && [ "$level" -gt 30 ] && [ "$level" -lt 100 ] && i="${i}-"
 
 echo "${i} ${level}%"
