@@ -15,9 +15,9 @@
 #define nord14 #A3BE8C
 #define nord15 #B48EAD
 
-*.foreground:   nord4
-*.background:   nord0
-*.cursorColor:  nord4
+*.foreground: nord4
+*.background: nord0
+*.cursorColor: nord4
 *fading: 35
 *fadeColor: nord3
 
@@ -37,3 +37,10 @@
 *.color13: nord15
 *.color14: nord7
 *.color15: nord6
+
+Nsxiv.bar.font: Iosevka Fixed-14
+Nsxiv.window.background: nord0
+Nsxiv.window.foreground: nord6
+Nsxiv.bar.background: nord3
+Nsxiv.bar.foreground: nord6
+Nsxiv.mark.foreground: nord7
