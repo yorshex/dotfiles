@@ -19,6 +19,7 @@
 #symlink nvim/syntax            .config/nvim/syntax
 #symlink polybar/config.ini     .config/polybar/config.ini
 #symlink sxhkd/sxhkdrc          .config/sxhkd/sxhkdrc
+#symlink tmux/tmux.conf         .config/tmux/tmux.conf
 #symlink X11/xinitrc            .config/X11/xinitrc
 #symlink X11/Xresources         .config/X11/Xresources
 #symlink zathura/zathurarc      .config/zathura/zathurarc
