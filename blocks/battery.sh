@@ -9,8 +9,9 @@ case "$t" in
 	(8) i=󰂁 ;; (9) i=󰂂 ;; (10) i=󰁹 ;;
 esac
 s="$(cat "$devpath/status")"
-[ "$s" = 'Charging' ] && i="${i}󱐋"
-[ "$s" != 'Charging' ] && [ "$level" -le 30 ] && i="${i}"
-[ "$s" = 'Not charging' ] && [ "$level" -gt 30 ] && [ "$level" -lt 100 ] && i="${i}-"
+if [ "$s" = 'Charging' ]; then i="${i}󱐋"
+elif [ "$s" != 'Charging' ] && [ "$level" -le 30 ]; then i="${i}"
+elif [ "$s" = 'Not charging' ] && [ "$level" -lt 100 ]; then i="${i}-"
+fi
 
 echo "${i} ${level}%"
