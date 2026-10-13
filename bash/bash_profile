@@ -29,6 +29,7 @@ export LC_ALL=en_US.UTF-8
 export HOST=`cat /etc/hostname`
 export PS1='${PWD} \$ '
 export GTK_THEME=Adwaita:dark
+export QT_QPA_PLATFORMTHEME=qt6ct
 
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export EDITOR=nvim
